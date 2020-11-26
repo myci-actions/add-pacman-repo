@@ -1,0 +1,29 @@
+= add-pacman-repo
+
+Add pacman repo to `/etc/pacman.conf`.
+
+Step syntax:
+
+....
+- name: <name>
+  uses: myci-actions/add-pacman-repo@<version>
+  with:
+    url: <repo-url>
+    name: <repo-name>
+....
+
+Arguments:
+
+- `<name>` - Action step name.
+- `<version>` - Action version.
+- `<repo-url>` - URL of the repository.
+- `<repo-name>` - Name of the repository.
+
+Step example:
+....
+- name: add custom pacman repository
+  uses: myci-actions/add-pacman-repo@1
+  with:
+    url: https://dl.bintray.com/igagis/msys2/mingw64
+    name: igagis_mingw64
+....
