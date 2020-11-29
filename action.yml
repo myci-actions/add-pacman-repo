@@ -17,7 +17,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name:
+    - name: add pacman repo
       run: |
         echo -e "[${{ inputs.name }}]" >> /etc/pacman.conf
         echo "SigLevel = Optional TrustAll" >> /etc/pacman.conf
