@@ -10,7 +10,7 @@ inputs:
   name:
     description: 'name of the repository'
     required: true
-  shell-to-use:
+  shell:
     description: 'shell to use'
     required: false
     default: bash
@@ -22,4 +22,4 @@ runs:
         echo -e "[${{ inputs.name }}]" >> /etc/pacman.conf
         echo "SigLevel = Optional TrustAll" >> /etc/pacman.conf
         echo "Server = ${{ inputs.url }}" >> /etc/pacman.conf
-      shell: ${{ inputs.shell-to-use }}
+      shell: msys2 {0}
