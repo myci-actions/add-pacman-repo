@@ -10,6 +10,7 @@ Step syntax:
   with:
     url: <repo-url>
     name: <repo-name>
+	shell: <shell>
 ....
 
 Arguments:
@@ -18,11 +19,12 @@ Arguments:
 - `<version>` - Action version.
 - `<repo-url>` - URL of the repository.
 - `<repo-name>` - Name of the repository.
+- `<shell>` - Shell to use. Optional. Default value is `bash`.
 
 Step example:
 ....
 - name: add custom pacman repository
-  uses: myci-actions/add-pacman-repo@1
+  uses: myci-actions/add-pacman-repo@2
   with:
     url: https://dl.bintray.com/igagis/msys2/mingw64
     name: igagis_mingw64

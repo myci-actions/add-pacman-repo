@@ -10,6 +10,10 @@ inputs:
   name:
     description: 'name of the repository'
     required: true
+  shell:
+    description: 'shell to use'
+    required: false
+    default: bash
 runs:
   using: "composite"
   steps:
@@ -18,4 +22,4 @@ runs:
         echo -e "[${{ inputs.name }}]" >> /etc/pacman.conf
         echo "SigLevel = Optional TrustAll" >> /etc/pacman.conf
         echo "Server = ${{ inputs.url }}" >> /etc/pacman.conf
-      shell: bash
+      shell: ${{ inputs.shell }}
