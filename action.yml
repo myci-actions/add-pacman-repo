@@ -38,6 +38,7 @@ runs:
         else
           echo "no key-server specified, skip importing keys
         fi
+      shell: msys2 {0}
     - name: add pacman repo
       run: |
         echo -e "[${{ inputs.name }}]" >> /etc/pacman.conf
