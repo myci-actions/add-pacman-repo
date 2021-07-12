@@ -10,7 +10,9 @@ Step syntax:
   with:
     url: <repo-url>
     name: <repo-name>
-	shell: <shell>
+    shell: <shell>
+    keys: <keys>
+    key-server: <key-server>
 ....
 
 Arguments:
@@ -20,6 +22,8 @@ Arguments:
 - `<repo-url>` - URL of the repository.
 - `<repo-name>` - Name of the repository.
 - `<shell>` - Shell to use. Optional. Default value is `bash`.
+- `<keys>` - Repository keys to import. Optional. Empty by default.
+- `<key-server>` - Key server to import keys from. Optional. Empty by default. If `keys` parameter is not specified, then `key-server` represents direct URL to the key.
 
 Step example:
 ....
