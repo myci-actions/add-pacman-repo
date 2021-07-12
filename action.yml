@@ -36,7 +36,7 @@ runs:
             curl --silent --show-error ${{ inputs.key-server }} | pacman-key --add -
           fi
         else
-          echo "no key-server specified, skip importing keys
+          echo "no key-server specified, skip importing keys"
         fi
       shell: msys2 {0}
     - name: add pacman repo
