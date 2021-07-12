@@ -38,7 +38,6 @@ runs:
         else
           echo "no key-server specified, skip importing keys
         fi
-      if: 
     - name: add pacman repo
       run: |
         echo -e "[${{ inputs.name }}]" >> /etc/pacman.conf
