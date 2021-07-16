@@ -53,7 +53,7 @@ runs:
     - name: install packages
       run: |
         if [ ! -z "${{ inputs.install }}" ] ; then
-          pacman --noconfirm --refresh --sync ${{ inputs.install }}
+          pacman --noconfirm --sync ${{ inputs.install }}
         else
           echo "installing packages is not requested"
         fi
