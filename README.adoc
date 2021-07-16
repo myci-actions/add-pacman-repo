@@ -13,6 +13,7 @@ Step syntax:
     shell: <shell>
     keys: <keys>
     key-server: <key-server>
+    install: <packages-to-install>
 ....
 
 Arguments:
@@ -24,11 +25,12 @@ Arguments:
 - `<shell>` - Shell to use. Optional. Default value is `bash`.
 - `<keys>` - Repository keys to import. Optional. Empty by default.
 - `<key-server>` - Key server to import keys from. Optional. Empty by default. If `keys` parameter is not specified, then `key-server` represents direct URL to the key.
+- `<packages-to-install>` - space separated list of packages to install after adding the repo. Optional. Empty by default.
 
 Step example:
 ....
 - name: add custom pacman repository
-  uses: myci-actions/add-pacman-repo@2
+  uses: myci-actions/add-pacman-repo@3
   with:
     url: https://dl.bintray.com/igagis/msys2/mingw64
     name: igagis_mingw64
