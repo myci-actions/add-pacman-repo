@@ -37,7 +37,7 @@ runs:
             pacman-key --keyserver ${{ inputs.key-server }} --recv-keys ${{ inputs.keys }}
           else
             echo "downloading key from direct URL"
-            curl --silent --show-error ${{ inputs.key-server }} | pacman-key --add -
+            curl --location --silent --show-error ${{ inputs.key-server }} | pacman-key --add -
           fi
         else
           echo "no key-server specified, skip importing keys"
