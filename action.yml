@@ -48,7 +48,7 @@ runs:
         echo -e "[${{ inputs.name }}]" >> /etc/pacman.conf
         echo "SigLevel = Optional TrustAll" >> /etc/pacman.conf
         echo "Server = ${{ inputs.url }}" >> /etc/pacman.conf
-        pacman --noconfirm --refresh --sysupgrade
+        pacman --sync --refresh --sysupgrade --noconfirm
       shell: ${{ inputs.shell}}
     - name: install packages
       run: |
