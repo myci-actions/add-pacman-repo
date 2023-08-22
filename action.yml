@@ -42,14 +42,14 @@ runs:
         else
           echo "no key-server specified, skip importing keys"
         fi
-      shell: msys2 {0}
+      shell: ${{ inputs.shell}}
     - name: add pacman repo
       run: |
         echo -e "[${{ inputs.name }}]" >> /etc/pacman.conf
         echo "SigLevel = Optional TrustAll" >> /etc/pacman.conf
         echo "Server = ${{ inputs.url }}" >> /etc/pacman.conf
         pacman --noconfirm --refresh --sync
-      shell: msys2 {0}
+      shell: ${{ inputs.shell}}
     - name: install packages
       run: |
         if [ ! -z "${{ inputs.install }}" ] ; then
@@ -57,4 +57,4 @@ runs:
         else
           echo "installing packages is not requested"
         fi
-      shell: msys2 {0}
+      shell: ${{ inputs.shell}}
