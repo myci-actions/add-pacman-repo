@@ -30,7 +30,7 @@ Arguments:
 Step example:
 ....
 - name: add custom pacman repository
-  uses: myci-actions/add-pacman-repo@6
+  uses: myci-actions/add-pacman-repo@7
   with:
     url: https://dl.bintray.com/igagis/msys2/mingw64
     name: igagis_mingw64
