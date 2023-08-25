@@ -48,12 +48,12 @@ runs:
         echo -e "[${{ inputs.name }}]" >> /etc/pacman.conf
         echo "SigLevel = Optional TrustAll" >> /etc/pacman.conf
         echo "Server = ${{ inputs.url }}" >> /etc/pacman.conf
-        pacman --sync --refresh --sysupgrade --noconfirm
+        pacman --sync --refresh --sysupgrade --noconfirm --noprogressbar
       shell: ${{ inputs.shell}}
     - name: install packages
       run: |
         if [ ! -z "${{ inputs.install }}" ] ; then
-          pacman --noconfirm --sync ${{ inputs.install }}
+          pacman --noconfirm --sync --noprogressbar ${{ inputs.install }}
         else
           echo "installing packages is not requested"
         fi
